@@ -1,18 +1,8 @@
 package main
-import "fmt"
-
-func sort(x []int) []int{
-  for i := 0; i < len(x); i++ {
-    for j := i+1; j<len(x); j++ {
-      if x[i] > x[j]{
-        a := x[i]
-        x[i] = x[j]
-        x[j] = a
-      }
-    }
-  }
-	return x
-}
+import (
+  "fmt"
+  "github.com/AnjuAshok/slice-in-ascending/sort"
+)
 
 func main() {
   var y []int
@@ -25,6 +15,6 @@ func main() {
       fmt.Scanln(&temp)
       y = append(y, temp)
   }
-	new := sort(y)
+	new := sort.Sort(y)
 	fmt.Println("The sorted slice is :", new)
 }
